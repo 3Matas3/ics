@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="SimpleTeamApp.App.Views.PostView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleTeamApp.App.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="500" d:DesignHeight="400">
+
+    <StackPanel Background="#26B4B4B4" Padding="24,16,24,16" Margin="0,8,0,8">
+        <!-- Hlavička -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <PersonPicture Grid.RowSpan="2" Width="48" DisplayName="Jan Novák" HorizontalAlignment="Left" VerticalAlignment="Top" ProfilePicture="/Assets/personpicture_test.jpg" Margin="0,0,10,0"/>
+            <TextBlock Grid.Column="1" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Left">Jan Novák</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" FontSize="11" Opacity="0.695" VerticalAlignment="Top" HorizontalAlignment="Left">18. 3. 2019 15:30</TextBlock>
+            <Button Grid.Column="2" Grid.RowSpan="2" Style="{StaticResource FloatingButton}">
+                <SymbolIcon Symbol="More"/>
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Icon="Edit" Text="Upravit"/>
+                        <MenuFlyoutItem Icon="Delete" Text="Smazat"/>
+                        <MenuFlyoutItem Icon="Pin" Text="Připnout"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+        </Grid>
+        <!-- Tělo příspěvku -->
+        <TextBlock Margin="0,8,0,8" Style="{StaticResource TitleTextBlockStyle}">
+            Nadpis příspěvku
+        </TextBlock>
+        <TextBlock Style="{StaticResource BodyTextBlockStyle}" MaxHeight="200" TextTrimming="WordEllipsis" IsTextSelectionEnabled="True">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Pellentesque arcu. Fusce aliquam vestibulum ipsum. Donec iaculis gravida nulla. Maecenas libero. Etiam posuere lacus quis dolor. Nullam eget nisl. Nulla quis diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Pellentesque arcu. Fusce aliquam vestibulum ipsum. Donec iaculis gravida nulla. Maecenas libero. Etiam posuere lacus quis dolor. Nullam eget nisl. Nulla quis diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </TextBlock>
+        <!-- Spodní panel -->
+        <Grid Margin="0,16,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource FloatingButton}">
+                <StackPanel Orientation="Horizontal" >
+                    <SymbolIcon Symbol="Comment" />
+                    <TextBlock Margin="8,0,0,0">Komentáře (2)</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource FloatingButton}" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Margin="0,0,8,0">100</TextBlock>
+                <FontIcon Glyph="&#xEB51;" FontSize="18,667" ></FontIcon>
+            </StackPanel>
+            </Button>
+        </Grid>
+    </StackPanel>
+</UserControl>
